@@ -1,4 +1,4 @@
-﻿$PrjToArchive = 'XXXXXXXXX'
+$PrjToArchive = 'XXXXXXXXX'
 $Path = 'c:\TEMP\Export\PSTraining'
 $pwDocs = Get-PWDocumentsBySearch -FolderPath $ProjectToArchive -GetAttributes
 $pwDocs.Count
@@ -7,3 +7,5 @@ $Export = @{
     ProjectWiseFolder = $PrjToArchive;
     OutputFileName = "$PrjToArchive.sqlite";
 }
+Export-PWDocumentsToArchive @Export -Verbose
+explorer $Path
